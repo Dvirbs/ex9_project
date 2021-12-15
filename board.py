@@ -2,6 +2,7 @@ import typing
 from typing import *
 import car
 
+
 class Board:
     """
     The Board of the game
@@ -12,7 +13,6 @@ class Board:
         # Note that this function is required in your Board implementation.
         # However, is not part of the API for general board types.
         self.__cars: List[car] = []
-
 
     def __str__(self):
         """
@@ -116,7 +116,7 @@ class Board:
         :return: True upon success, False otherwise
         """
         # implement your code and erase the "pass"
-        #self.possible_moves-[('O','d',"some description"),('R','r',"some description"),('O','u',"some description")]
+        # self.possible_moves-[('O','d',"some description"),('R','r',"some description"),('O','u',"some description")]
 
         for car_description in self.possible_moves():
             if name == car_description[0] and movekey == car_description[1]:
@@ -124,12 +124,3 @@ class Board:
                     if name == car.get_name():
                         return car.move(movekey)
         return False
-
-
-
-
-
-
-# if __name__ == '__main__':
-#     my_board = Board()
-#     print(my_board)
