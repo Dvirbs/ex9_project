@@ -14,7 +14,7 @@ class Board:
         # However, is not part of the API for general board types.
         self.__cars: List[car] = []
 
-    def __str__(self):
+    def __str__(self) -> str:
         """
         This function is called when a board object is to be printed.
         :return: A string of the current status of the board
@@ -70,7 +70,7 @@ class Board:
                     board_possible_moves.append((car.get_name(), possible_move, description))
         return board_possible_moves
 
-    def target_location(self):
+    def target_location(self) -> Tuple:
         """
         This function returns the coordinates of the location which is to be filled for victory.
         :return: (row,col) of goal location
@@ -78,7 +78,7 @@ class Board:
         # In this board, returns (3,7)
         return 3, 7
 
-    def cell_content(self, coordinate: typing.Tuple):
+    def cell_content(self, coordinate: typing.Tuple) -> Optional:
         """
         Checks if the given coordinates are empty.
         :param coordinate: tuple of (row,col) of the coordinate to check
@@ -89,7 +89,7 @@ class Board:
                 return car.get_name()
         return
 
-    def add_car(self, car):
+    def add_car(self, car) -> bool:
         """
         Adds a car to the game.
         :param car: car object of car to add
@@ -108,7 +108,7 @@ class Board:
         self.__cars.append(car)
         return True
 
-    def move_car(self, name, movekey):
+    def move_car(self, name: str, movekey: str):
         """
         moves car one step in given direction.
         :param name: name of the car to move

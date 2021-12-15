@@ -32,7 +32,7 @@ class Car:
             car_coordinates_list = [(row + i, col) for i in range(self.__length)]
         return car_coordinates_list
 
-    def possible_moves(self):
+    def possible_moves(self) -> Dict:
         """
         :return: A dictionary of strings describing possible movements permitted by this car.
         """
@@ -55,7 +55,7 @@ class Car:
             possible_moves_dict['d'] = 'cause you can move down'
         return possible_moves_dict
 
-    def movement_requirements(self, movekey: str):
+    def movement_requirements(self, movekey: str) -> List:
         """ 
         :param movekey: A string representing the key of the required move.
         :return: A list of cell locations which must be empty in order for this move to be legal.
@@ -77,7 +77,7 @@ class Car:
 
         return legal_cell
 
-    def move(self, movekey):
+    def move(self, movekey) -> bool:
         """ 
         :param movekey: A string representing the key of the required move.
         :return: True upon success, False otherwise
@@ -97,7 +97,7 @@ class Car:
         else:
             return False
 
-    def get_name(self):
+    def get_name(self) -> str:
         """
         :return: The name of this car.
         """

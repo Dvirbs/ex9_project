@@ -10,7 +10,7 @@ class Game:
     game of rush hour
     """
 
-    def __init__(self, board):
+    def __init__(self, board: board.Board):
         """
         Initialize a new Game object.
         :param board: An object of type board
@@ -20,7 +20,7 @@ class Game:
         self.__board = board
         self.player_quit = False
 
-    def __legal_car_name(self, name: str):
+    def __legal_car_name(self, name: str) -> bool:
         """
         check if car name is legal
         :return: True if name is legal
@@ -29,11 +29,11 @@ class Game:
             return False
         return True
 
-    def __legel_car_move(self, name: str, direction: str):
+    def __legel_car_move(self, name: str, direction: str) -> bool:
         """
         check the the move is legal
         :param direction: the direction of the move
-        :return: True it is legal
+        :return: True if is legal
         """
         if direction != 'l' and direction != 'r' and direction != 'u' and direction != 'd':
             return False
